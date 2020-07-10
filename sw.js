@@ -11,7 +11,7 @@ const INMUTABLE_CACHE = 'inmutable-v1';
 
 // elementos de la aplicacion
 const APP_SHELL = [
-  '/',
+  // '/',
   'index.html',
   'css/style.css',
   'img/avatars/spiderman.jpg',

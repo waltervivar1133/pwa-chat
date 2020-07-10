@@ -1,4 +1,13 @@
 // register sw
+ var url = window.location.href;
+ var swLocation = '/pwa-chat/sw.js';
+
+if( navigator.serviceWorker){
+
+    if( url.includes('localhost')){
+        swLocation = '/sw.js'; '
+    }
+}
 
 if (navigator.serviceWorker) {
 	window.addEventListener('load', function() {   // cuando a pagina carge completamente
