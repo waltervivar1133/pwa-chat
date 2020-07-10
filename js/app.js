@@ -2,16 +2,18 @@
  var url = window.location.href;
  var swLocation = '/pwa-chat/sw.js';
 
-if( navigator.serviceWorker){
 
-    if( url.includes('localhost')){
-        swLocation = '/sw.js';
-    }
-}
 
 if (navigator.serviceWorker) {
-	window.addEventListener('load', function() {   // cuando a pagina carge completamente
-		navigator.serviceWorker.register('/sw.js')
+
+	window.addEventListener('load', function() { 
+        
+        // cuando a pagina carge completamente
+            if( url.includes('localhost')){
+                swLocation = '/sw.js';
+            }
+        navigator.serviceWorker.register(swLocation)
+        
 		    .then(reg => console.log('Registro de SW exitoso', reg))
 			.catch(err => console.warn('Error al tratar de registrar el sw', err))
   	});
